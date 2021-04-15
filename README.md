@@ -1,27 +1,55 @@
-# Vue 3 + Typescript + Vite
+# WindiCSS Issue - `container`
 
-This template should help get you started developing with Vue 3 and Typescript in Vite.
+In `tailwind.config.ts` we have:
 
-## Recommended IDE Setup
+```ts
+import { defineConfig } from 'vite-plugin-windicss'
 
-[VSCode](https://code.visualstudio.com/) + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur). Make sure to enable `vetur.experimental.templateInterpolationService` in settings!
+export default defineConfig({
+    theme: {
+        container: {
+            padding: "30px",
+            center: true,
+        },
+    }
+})
+```
 
-### If Using `<script setup>`
+In [Tailwind CSS docs](https://tailwindcss.com/docs/container#horizontal-padding) we have:
 
-[`<script setup>`](https://github.com/vuejs/rfcs/pull/227) is a feature that is currently in RFC stage. To get proper IDE support for the syntax, use [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) instead of Vetur (and disable Vetur).
+> To add horizontal padding by default, specify the amount of padding you'd like using the padding option in the theme.container section of your config file:
 
-## Type Support For `.vue` Imports in TS
+```js
+// tailwind.config.js
+module.exports = {
+  theme: {
+    container: {
+      padding: '2rem',
+    },
+  },
+}
+```
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can use the following:
+In this demo we have:
 
-### If Using Volar
+![](./screenshot.png)
 
-Run `Volar: Switch TS Plugin on/off` from VSCode command palette.
+To run demo:
 
-### If Using Vetur
+```sh
+npm install
+npm run dev
 
-1. Install and add `@vuedx/typescript-plugin-vue` to the [plugins section](https://www.typescriptlang.org/tsconfig#plugins) in `tsconfig.json`
-2. Delete `src/shims-vue.d.ts` as it is no longer needed to provide module info to Typescript
-3. Open `src/main.ts` in VSCode
-4. Open the VSCode command palette
-5. Search and run "Select TypeScript version" -> "Use workspace version"
+# or
+
+pnpm i
+pnpm dev
+
+# or
+
+yarn
+yarn dev
+
+# etc
+```
+

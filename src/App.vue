@@ -1,8 +1,7 @@
 <template>
-  <div class="container border">
-    Hello, resize window horizontally and you will see, that there no any horizontal padding
-    <br>
-    Also, there are no centering :/
+  <div class="container border-2 border-blue-600 mt-20 text-center p-4">
+    Hello, resize window horizontally and you will see,
+    that there no any horizontal padding <b>outside of container</b>
   </div>
 </template>
 
@@ -13,14 +12,3 @@ export default defineComponent({
   name: 'App',
 })
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
